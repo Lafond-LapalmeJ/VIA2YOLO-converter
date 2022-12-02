@@ -31,7 +31,7 @@ def get_dark_annotation(region, size):
 def main():
     with open(sys.argv[1:][0]) as file:
         dict = json.load(file)
-        
+        dict = dict["_via_img_metadata"]
         try:        
             namesFile = sys.argv[1:][1]
             names = open(namesFile).read().split('\n')
@@ -40,7 +40,8 @@ def main():
 
         for key in dict.keys():
             data = dict[key]
-
+            print(key)
+            
             imageName = data['filename']
             filename = imageName.rsplit('.', 1)[0]
             
