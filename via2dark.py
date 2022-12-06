@@ -9,7 +9,7 @@ def get_object_class(region, file, names):
         type = region['region_attributes']['Insecte']
         # package = region['region_attributes']['package']
     except KeyError:
-        print(str(sys.stderr) + "type or package info is missing in " + file)
+        print(str(sys.stderr) + "Missing annotation region_attributes not define in file:  " + file)
 
     name = type 
     index = [item.lower() for item in names].index(name.lower())
