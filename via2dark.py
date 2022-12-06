@@ -6,15 +6,14 @@ from decimal import *
 def get_object_class(region, file, names):
     print(names)
     try:        
-        type = list(region['region_attributes'].keys())[0]
-        print(type)
+        type = region['region_attributes']['Insecte']
         # package = region['region_attributes']['package']
     except KeyError:
         print(str(sys.stderr) + "type or package info is missing in " + file)
 
     name = type 
-    #index = [item.lower() for item in names].index(name.lower())
-    index = 13
+    index = [item.lower() for item in names].index(name.lower())
+    #index = 13
     return index
 
 def get_dark_annotation(region, size):
